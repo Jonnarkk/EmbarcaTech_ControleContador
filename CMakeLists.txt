@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Contador_na_mao Contador_na_mao.c )
+add_executable(Contador_na_mao Contador_na_mao.c cFiles/led_matriz.c cFiles/numeros.c)
 
 pico_set_program_name(Contador_na_mao "Contador_na_mao")
 pico_set_program_version(Contador_na_mao "0.1")
@@ -51,6 +51,7 @@ pico_generate_pio_header(Contador_na_mao ${CMAKE_CURRENT_LIST_DIR}/pio_matriz.pi
 target_link_libraries(Contador_na_mao
         hardware_pio
         hardware_clocks
+        hardware_gpio
         pico_stdlib)
 
 # Add the standard include files to the build

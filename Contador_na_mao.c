@@ -54,22 +54,17 @@ void exibir_numero(PIO pio, uint sm) {
     }
 }
 
-// Função de interrupção para o botão A (incrementa o número)
-void botao_A_callback(uint gpio, uint32_t events) {
+// Função de interrupção para os botões
+void botao_callback(uint gpio, uint32_t events) {
+    uint32_t tempo_atual = to_ms_since_boot(get_absolute_time());
+
     if (gpio == Botao_A) { // Verifica se o botão A foi pressionado
-        uint32_t tempo_atual = to_ms_since_boot(get_absolute_time());
         if (tempo_atual - ultimo_tempo_botao_A > DEBOUNCE_DELAY) { // Debounce
             printf("Botão A pressionado!\n"); // Mensagem de depuração
             numero = (numero + 1) % 10; // Incrementa o número (0-9)
             ultimo_tempo_botao_A = tempo_atual;
         }
-    }
-}
-
-// Função de interrupção para o botão B (decrementa o número)
-void botao_B_callback(uint gpio, uint32_t events) {
-    if (gpio == Botao_B) { // Verifica se o botão B foi pressionado
-        uint32_t tempo_atual = to_ms_since_boot(get_absolute_time());
+    } else if (gpio == Botao_B) { // Verifica se o botão B foi pressionado
         if (tempo_atual - ultimo_tempo_botao_B > DEBOUNCE_DELAY) { // Debounce
             printf("Botão B pressionado!\n"); // Mensagem de depuração
             numero = (numero - 1 + 10) % 10; // Decrementa o número (0-9)
@@ -90,8 +85,7 @@ int main() {
     // Configura interrupções para os botões
     gpio_set_irq_enabled(Botao_A, GPIO_IRQ_EDGE_FALL, true);
     gpio_set_irq_enabled(Botao_B, GPIO_IRQ_EDGE_FALL, true);
-    gpio_set_irq_callback(&botao_A_callback); // Define a callback para o botão A
-    gpio_set_irq_callback(&botao_B_callback); // Define a callback para o botão B
+    gpio_set_irq_callback(botao_callback); // Define a callback para os botões
     irq_set_enabled(IO_IRQ_BANK0, true); // Habilita interrupções do banco 0
 
     printf("Sistema iniciado. Aguardando pressionamento dos botões...\n");
@@ -99,6 +93,5 @@ int main() {
     while (true) {
         blink_vermelho();
         exibir_numero(pio, sm); // Exibe o número atual na matriz
-        sleep_ms(100); // Pequeno delay para evitar flicker
     }
 }

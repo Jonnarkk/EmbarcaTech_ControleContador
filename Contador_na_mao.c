@@ -11,7 +11,7 @@
 #define Red_pin 13      // Pino do LED vermelho
 #define Botao_A 5       // Pino do botão A
 #define Botao_B 6       // Pino do botão B
-#define DEBOUNCE_DELAY 200 // Tempo de debounce em milissegundos
+#define DEBOUNCE_DELAY 200 // Tempo de debounce em ms
 
 // Variáveis globais
 volatile int numero = 0; // Número atual exibido na matriz

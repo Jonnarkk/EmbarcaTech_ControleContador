@@ -38,6 +38,8 @@
     "raspberry-pi-pico.ninjaPath": "${HOME}/.pico-sdk/ninja/v1.12.1/ninja",
     "files.associations": {
         "led_matriz.h": "c",
-        "numeros.h": "c"
+        "numeros.h": "c",
+        "gpio.h": "c",
+        "stdlib.h": "c"
     }
 }

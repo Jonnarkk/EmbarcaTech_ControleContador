@@ -13,8 +13,8 @@ void num0(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha (espelhamento no eixo X)
+        int coluna = i % 5; // Mantém a coluna original (sem espelhamento no eixo Y)
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -30,8 +30,8 @@ void num1(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -47,8 +47,8 @@ void num2(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -64,8 +64,8 @@ void num3(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -81,8 +81,8 @@ void num4(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -98,8 +98,8 @@ void num5(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -115,8 +115,8 @@ void num6(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -132,8 +132,8 @@ void num7(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -149,8 +149,8 @@ void num8(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }
@@ -166,8 +166,8 @@ void num9(PIO pio, uint sm) {
     };
 
     for (int i = 0; i < 25; i++) {
-        int linha = i / 5;
-        int coluna = 4 - (i % 5); // Inverte a coluna
+        int linha = 4 - (i / 5); // Inverte a linha
+        int coluna = i % 5; // Mantém a coluna original
         pio_sm_put_blocking(pio, sm, matriz_rgb(frame[linha * 5 + coluna], 0.0, 0.0));  // Cor vermelha
     }
 }

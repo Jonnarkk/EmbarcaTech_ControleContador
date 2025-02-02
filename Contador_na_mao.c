@@ -9,8 +9,8 @@
 
 // Defines
 #define Red_pin 13      // Pino do LED vermelho
-#define Botao_A 6       // Pino do botão A
-#define Botao_B 5       // Pino do botão B
+#define Botao_A 5       // Pino do botão A
+#define Botao_B 6       // Pino do botão B
 #define DEBOUNCE_DELAY 200 // Tempo de debounce em ms
 
 // Variáveis globais
@@ -60,14 +60,14 @@ void botao_callback(uint gpio, uint32_t events) {
 
     if (gpio == Botao_A) { // Verifica se o botão A foi pressionado
         if (tempo_atual - ultimo_tempo_botao_A > DEBOUNCE_DELAY) { // Debounce
-            printf("Botão A pressionado!\n"); // Mensagem de depuração
-            numero = (numero + 1) % 10; // Incrementa o número (0-9)
+            printf("Botão A pressionado!\n"); 
+            numero = (numero + 1) % 10; // Incrementa o número
             ultimo_tempo_botao_A = tempo_atual;
         }
     } else if (gpio == Botao_B) { // Verifica se o botão B foi pressionado
         if (tempo_atual - ultimo_tempo_botao_B > DEBOUNCE_DELAY) { // Debounce
-            printf("Botão B pressionado!\n"); // Mensagem de depuração
-            numero = (numero - 1 + 10) % 10; // Decrementa o número (0-9)
+            printf("Botão B pressionado!\n"); 
+            numero = (numero - 1 + 10) % 10; // Decrementa o número
             ultimo_tempo_botao_B = tempo_atual;
         }
     }

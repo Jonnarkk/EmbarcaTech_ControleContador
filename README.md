@@ -4,8 +4,8 @@
 Este projeto faz o controle da matriz de LED (5x5 WS2812) a partir dos botões da placa, utilizando uma lógica de contador para mostrar números de 0 a 9 na matriz, juntamente com blinks do LED RGB.
 
 ## Funcionalidades
-- **Botão A: Decrementa o número na matriz de LED's
-- **Botão B: Incrementa o número na matriz de LED's
+- **Botão A**: Incrementa o número na matriz de LED's
+- **Botão B**: Decrementa o número na matriz de LED's
 
 ## Estrutura do Código
 O código está estruturado em funções para inicilização e manuseio dos periféricos:
